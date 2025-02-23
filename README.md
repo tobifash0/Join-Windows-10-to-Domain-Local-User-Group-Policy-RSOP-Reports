@@ -277,7 +277,7 @@ Remember, we currently have three virtual machines running: Windows Server 2022,
 Double-click on Internet Protocol Version 4 (TCP/IPv4), and configure the static IP settings as follows:
 
 
-IP Address: 192.168.1.103
+IP Address: 192.168.1.102
 
 Subnet Mask: 255.255.255.0
 
@@ -287,3 +287,68 @@ Preferred DNS: 168.192.1.1
 
 
 Click OK to apply the settings.
+
+<br>
+
+<img width="654" alt="Screenshot 2025-02-23 at 12 09 01 AM" src="https://github.com/user-attachments/assets/ce7e4e84-41d3-4e35-82b5-f72f37d8406c" />
+
+<br>
+
+31. Next on our virtual machine, select “Devices” → “Network” → “Network settings” → and change “NAT” to “Internal Network”.
+
+<br>
+
+<img width="963" alt="Screenshot 2025-02-23 at 12 14 32 AM" src="https://github.com/user-attachments/assets/758c4ede-6c43-49ec-bccd-3b5825d604dd" />
+
+<br>
+
+32. Now lets open Command Prompt and ping our domain, Tobifash.com.
+
+<br>
+
+<img width="912" alt="Screenshot 2025-02-23 at 12 17 19 AM" src="https://github.com/user-attachments/assets/f5528402-824e-478e-bfb3-94e4ae01f3a7" />
+
+<br>
+
+33. Now, let's add this PC to our domain by opening File Explorer, right-clicking on This PC, selecting Properties, then clicking on Rename this PC (Advanced), and finally selecting Change.
+
+<br>
+
+![Screenshot 2025-02-19 at 4 28 50 AM](https://github.com/user-attachments/assets/bc3e2bcd-a204-4568-918b-7c38548a8217)
+
+<br>
+
+34. Then, we can use our Helpdesk administrator account to join the domain. Afterward, restart the VirtualBox. Once restarted, check Active Directory Users and Computers → Computers under our Helpdesk account. You should see that Desktop2 has been successfully added to our domain, tobifash.com.
+
+<br>
+
+![Screenshot 2025-02-19 at 4 41 30 AM](https://github.com/user-attachments/assets/228c02ee-c382-48a8-b2cb-e4aff019af04)
+
+<br> 
+
+35. Now when our PC is finish restarting, lets log in as Bob on our local user account Desktop2
+
+<br> 
+
+![image](https://github.com/user-attachments/assets/e513448d-3544-4187-b803-2924ca1541fa)
+
+<br> 
+
+36. Finally, we’ll run some key command-line tools to ensure everything is functioning correctly. Using ping tobifash.com, we verify network connectivity with the domain controller. The ipconfig command confirms proper network configuration, and net use Bob /domain tests our ability to access domain resources with valid credentials. With these checks, we can confidently confirm that our setup is working as expected.
+
+<br>
+
+![Screenshot 2025-02-19 at 4 44 14 AM](https://github.com/user-attachments/assets/ee69ce77-5e78-49b2-8794-dd59250ef491)
+
+<br>
+
+![Screenshot 2025-02-19 at 4 44 33 AM](https://github.com/user-attachments/assets/99db373c-c0d9-4b13-ad73-c4854238af22)
+
+<br>
+
+Congratulations! We have successfully joined Desktop2 to the domain as a local user on a Windows 10 PC, configured and analyzed policy settings, and explored Group Policy Management.
+
+For administration and troubleshooting, we utilized Command Line Tools (CMD) and generated Resultant Set of Policy (RSOP) reports to review the implemented policies.
+
+
+👉 Next Lab 6 : Common Active Directory Issues, CMD Commands, PC Offline
