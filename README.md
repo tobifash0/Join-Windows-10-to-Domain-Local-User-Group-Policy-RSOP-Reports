@@ -283,7 +283,7 @@ Subnet Mask: 255.255.255.0
 
 Default Gateway: 192.168.1.1
 
-Preferred DNS: 168.192.1.1
+Preferred DNS: 192.168.1.100
 
 
 Click OK to apply the settings.
